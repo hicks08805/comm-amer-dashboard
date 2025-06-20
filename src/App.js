@@ -70,8 +70,8 @@ export default function App() {
           path="/page3"
           element={
             <SheetPreview
-            title="Opearations Dashboard"
-            url="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/"
+            title="Opearations Request Form"
+            url="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true"
             />
           }
         />
