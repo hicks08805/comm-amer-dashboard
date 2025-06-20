@@ -71,7 +71,7 @@ export default function App() {
           element={
             <SheetPreview
             title="Opearations Dashboard"
-            url="https://docs.google.com/spreadsheets/d/1rOtjAFDhP1vZEc3avr2mnzGGtts_DdOZCa6YGv7RK4A/preview"
+            url="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/"
             />
           }
         />
