@@ -49,35 +49,44 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-  path="/page1"
-  element={
-    <SheetPreview
-      title="Customer Success Sheet"
-      url="https://docs.google.com/spreadsheets/d/1Zu8rubQkE_gFAgOXdsdL4CYqpLvt33bIbNa9U7pDZdo/preview"
-    />
-  }
-/>
+          path="/page1"
+          element={
+            <SheetPreview
+            title="Customer Success Sheet"
+            url="https://docs.google.com/spreadsheets/d/1Zu8rubQkE_gFAgOXdsdL4CYqpLvt33bIbNa9U7pDZdo/preview"
+          />
+          }
+        />
         <Route path="/page2" element={<div className="container text-center mt-5"><h2>Distribution Metrics</h2><Link to="/" className="btn btn-outline-secondary">← Back</Link></div>} />
         <Route
-  path="/page3"
-  element={
-    <SheetPreview
-      title="Opearations Dashboard"
-      url="https://docs.google.com/spreadsheets/d/1rOtjAFDhP1vZEc3avr2mnzGGtts_DdOZCa6YGv7RK4A/preview"
-    />
-  }
-/>
-        <Route path="/page4" element={<div className="container text-center mt-5"><h2>Reseller Metrics</h2><Link to="/" className="btn btn-outline-secondary">← Back</Link></div>} />
+          path="/page3"
+          element={
+            <SheetPreview
+            title="Opearations Dashboard"
+            url="https://docs.google.com/spreadsheets/d/1rOtjAFDhP1vZEc3avr2mnzGGtts_DdOZCa6YGv7RK4A/preview"
+            />
+          }
+        />
         <Route
-  path="/page5"
-  element={
-    <SheetPreview
-      title="Forecast File"
-      url="https://docs.google.com/spreadsheets/d/11AI2u8e_q_-99YXX3md2s1qOpClpRJ-959puJFEfw2U/preview"
-    />
-  }
-/>
+          path="/page4"
+          element={
+            <SheetPreview
+            title="Reseller List"
+            url="https://docs.google.com/spreadsheets/d/1QOkaMRBVgoUPZEuOwpTQbChwTSIwhqnfzDZIpzV1Dco/preview"
+            />
+          }
+        />
+        <Route
+          path="/page5"
+          element={
+            <SheetPreview
+              title="Forecast File"
+              url="https://docs.google.com/spreadsheets/d/11AI2u8e_q_-99YXX3md2s1qOpClpRJ-959puJFEfw2U/preview"
+            />
+          }
+        />
       </Routes>
     </Router>
   );
+  
 }
