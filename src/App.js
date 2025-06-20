@@ -57,7 +57,15 @@ export default function App() {
           />
           }
         />
-        <Route path="/page2" element={<div className="container text-center mt-5"><h2>Distribution Metrics</h2><Link to="/" className="btn btn-outline-secondary">← Back</Link></div>} />
+        <Route
+          path="/page2"
+          element={
+            <SheetPreview
+            title="Disti Forecast Dashboard"
+            url="https://docs.google.com/spreadsheets/d/1Ubg6nsP8CndyklOn0g5O7fxzqLO9bZOG0koP4k2K0bA/preview"
+          />
+          }
+        />
         <Route
           path="/page3"
           element={
