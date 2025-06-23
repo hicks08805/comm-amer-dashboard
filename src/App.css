@@ -41,7 +41,7 @@ html, body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: linear-gradient(to bottom, #fcb6b6, #720000) !important; /* medium gray to black */
+  background: linear-gradient(to bottom, rgb(252, 231, 231),rgb(72, 3, 3)) !important; /* medium gray to black */
   color: white;
   font-family: sans-serif;
 }
@@ -51,5 +51,5 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: white !important;
+  color: rgb(22, 22, 22) !important;
 }
