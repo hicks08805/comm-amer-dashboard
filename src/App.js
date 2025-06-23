@@ -29,7 +29,7 @@ function SheetPreview({ title, url }) {
           title={title}
         ></iframe>
       </div>
-      <Link to="/" className="btn btn-outline-dark mt-3">← Back</Link>
+      <Link to="/" className="btn btn-outline-dark fw-bold mt-3">← Back</Link>
     </div>
   );
 }
@@ -44,7 +44,7 @@ function OperationsLayout() {
             <Link to="/page3/form" className="btn btn-outline-dark fw-bold">Submit a Request</Link>
             <Link to="/page3/sheet" className="btn btn-outline-dark fw-bold">View Requests</Link>
           </div>
-          <Link to="/" className="btn btn-link mt-5">← Back to Home</Link>
+          <Link to="/" className="btn btn-link fw-bold mt-5" style={{color:'white'}}>← Back to Home</Link>
         </div>
         <div className="col-9 p-4">
           <Outlet />
