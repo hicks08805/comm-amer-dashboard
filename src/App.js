@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Outlet } from 'react-router-dom';
 
 function Home() {
   return (
@@ -56,6 +56,30 @@ function SheetPreview({ title, url }) {
   );
 }
 
+function OperationsLayout() {
+  return (
+    <div className="container-fluid">
+      <div className="row vh-100">
+        {/* Sidebar */}
+        <div className="col-3 bg-light p-4 border-end">
+          <h4>Operations</h4>
+          <div className="d-grid gap-2 mt-3">
+            <Link to="/page3/form" className="btn btn-primary">Submit a Request</Link>
+            <Link to="/page3/sheet" className="btn btn-success">View Requests</Link>
+          </div>
+          <Link to="/" className="btn btn-link mt-5">← Back to Home</Link>
+        </div>
+
+        {/* Content Area */}
+        <div className="col-9 p-4">
+          <Outlet />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
 export default function App() {
   return (
     <Router>
@@ -79,38 +103,47 @@ export default function App() {
           />
           }
         />
-        <Route path="/page3" element={<OperationsOptions />} />
-        <Route
-          path="/page3/form"
-          element={
-            <div className="container text-center mt-5">
-              <h2 className="mb-4">Submit an Operations Request</h2>
-              <div className="ratio ratio-4x3">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true" width="640" height="2209" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-              </div>
-              <Link to="/page3" className="btn btn-outline-secondary mt-4">← Back</Link>
-            </div>
-          }
-        />
+        <Route path="/page3" element={<OperationsLayout />}>
+  <Route
+    index
+    element={<OperationsOptions />}
+  />
+  <Route
+    path="form"
+    element={
+      <div className="container text-center mt-3">
+        <h2 className="mb-4">Submit an Operations Request</h2>
+        <div className="ratio ratio-4x3">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true"
+            width="100%"
+            height="800"
+            frameBorder="0"
+            title="Operations Form"
+          />
+        </div>
+      </div>
+    }
+  />
+  <Route
+    path="sheet"
+    element={
+      <div className="container text-center mt-3">
+        <h2 className="mb-4">Operations Request Tracker</h2>
+        <div className="ratio ratio-16x9">
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
+            width="100%"
+            height="600"
+            frameBorder="0"
+            title="Operations Requests Sheet"
+          />
+        </div>
+      </div>
+    }
+  />
+</Route>
 
-        <Route
-          path="/page3/sheet"
-          element={
-            <div className="container text-center mt-5">
-              <h2 className="mb-4">Operations Request Tracker</h2>
-              <div className="ratio ratio-16x9">
-                <iframe
-                  src="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  title="Operations Requests Sheet"
-                />
-              </div>
-              <Link to="/page3" className="btn btn-outline-secondary mt-4">← Back</Link>
-            </div>
-          }
-        />
         <Route
           path="/page4"
           element={
