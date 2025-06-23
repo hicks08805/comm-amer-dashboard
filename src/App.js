@@ -57,11 +57,10 @@ function OperationsLayout() {
 export default function App() {
   return (
     <div style={{
-  minHeight: '100vh',
-  minWidth: '100vw',
-  background: 'linear-gradient(to bottom, #808080, #000000)',
-  color: 'white'
-}}>
+      minHeight: '100vh',
+      minWidth: '100vw',
+      background: 'linear-gradient(to bottom, #808080, #000000)',
+    }}>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
