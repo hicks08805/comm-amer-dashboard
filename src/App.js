@@ -52,7 +52,7 @@ function OperationsLayout() {
       </div>
     </div>
   );
-
+}
 
 export default function App() {
   return (
@@ -155,5 +155,4 @@ export default function App() {
       </Routes>
     </Router>
   );
-}
 }
