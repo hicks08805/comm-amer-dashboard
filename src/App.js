@@ -79,11 +79,24 @@ export default function App() {
           />
           }
         />
-        <Route path="/page3" element={<OperationsLayout />}>
+
   <Route
-    index
-    element={<OperationsOptions />}
-  />
+  index
+  element={
+    <div className="container text-center mt-3">
+      <h2 className="mb-4">Operations Request Tracker</h2>
+      <div className="ratio ratio-16x9">
+        <iframe
+          src="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
+          width="100%"
+          height="600"
+          frameBorder="0"
+          title="Operations Requests Sheet"
+        />
+      </div>
+    </div>
+  }
+/>
   <Route
     path="form"
     element={
