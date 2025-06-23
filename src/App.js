@@ -56,6 +56,7 @@ function OperationsLayout() {
 
 export default function App() {
   return (
+    <div style={{ backgroundColor: '#000', minHeight: '100vh', color: 'white' }}>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -154,5 +155,6 @@ export default function App() {
         />
       </Routes>
     </Router>
-  );
+    </div>
+      );
 }
