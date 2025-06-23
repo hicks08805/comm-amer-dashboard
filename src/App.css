@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #808080;
+  color: white;
 }
 
 .App-link {
@@ -38,10 +38,16 @@
 }
 
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #808080, #000000); /* Medium gray to black */
+  min-height: 100%;
+  background: linear-gradient(to bottom, #333333, #000000); /* medium gray to black */
   color: white;
+  font-family: sans-serif;
 }
+
+#root {
+  min-height: 100%;
+}
+
 

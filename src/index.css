@@ -5,10 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: linear-gradient(to bottom, #808080, #000000) !important; /* Medium gray to black */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: linear-gradient(to bottom, #333333, #000000); /* medium gray to black */
+  color: white;
+  font-family: sans-serif;
+}
+
+#root {
+  min-height: 100%;
+}
+
