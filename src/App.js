@@ -73,7 +73,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-lin fw-bold text-white" to="/page1">Customer Success</Link>
+              <Link className="nav-link fw-bold text-white" to="/page1">Customer Success</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link fw-bold text-white" to="/page2">Distribution</Link>
