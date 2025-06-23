@@ -39,7 +39,6 @@
 
 body, html {
   background-color: #808080 !important;
-  color: white; /* optional, ensures content is visible */
   margin: 0;
   padding: 0;
   height: 100%;
