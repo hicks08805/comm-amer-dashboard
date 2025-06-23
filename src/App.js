@@ -54,6 +54,46 @@ function OperationsLayout() {
   );
 }
 
+function Navbar() {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">Comm Amer Dashboard</Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/page1">Customer Success</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/page2">Distribution</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/page3">Operations</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/page4">Reseller</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/page5">Sales</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
 export default function App() {
   return (
     <div style={{
@@ -61,7 +101,9 @@ export default function App() {
       minWidth: '100vw',
       background: 'linear-gradient(to bottom,rgb(173, 172, 172),rgb(107, 1, 1))',
     }}>
+
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         
@@ -102,7 +144,7 @@ export default function App() {
                 </div>
               </div>
             }
-          />
+          />          
           <Route
             path="form"
             element={
