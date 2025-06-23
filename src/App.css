@@ -13,7 +13,16 @@
   }
 }
 
-
+.App-header {
+  background-color: rgb(198, 195, 195);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 
 .App-link {
   color: #05f9fd;
@@ -32,7 +41,7 @@ html, body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: linear-gradient(to bottom, rgb(198, 195, 195), #000000) !important; /* medium gray to black */
+  background: linear-gradient(to bottom, #fcb6b6, #720000) !important; /* medium gray to black */
   color: white;
   font-family: sans-serif;
 }

@@ -59,7 +59,7 @@ export default function App() {
     <div style={{
       minHeight: '100vh',
       minWidth: '100vw',
-      background: 'linear-gradient(to bottom,rgb(198, 195, 195), #000000)',
+      background: 'linear-gradient(to bottom, #fcb6b6, #720000)',
     }}>
     <Router>
       <Routes>
