@@ -38,7 +38,7 @@ function OperationsLayout() {
   return (
     <div className="container-fluid">
       <div className="row vh-100">
-        <div className="col-3 bg-light p-4 border-end">
+        <div className="col-3 p-4 border-end">
           <h4>Comm Amer Requests</h4>
           <div className="d-grid gap-2 mt-3">
             <Link to="/page3/form" className="btn btn-outline-light">Submit a Request</Link>
