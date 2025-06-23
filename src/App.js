@@ -6,11 +6,11 @@ function Home() {
     <div className="container text-center mt-5">
       <h1 className="mb-4">Commercial Americas Dashboard</h1>
       <div className="d-grid gap-3 col-6 mx-auto">
-        <Link to="/page1" className="btn btn-outline-light">Customer Success</Link>
-        <Link to="/page2" className="btn btn-outline-light">Distribution</Link>
-        <Link to="/page3" className="btn btn-outline-light">Operations</Link>
-        <Link to="/page4" className="btn btn-outline-light">Reseller</Link>
-        <Link to="/page5" className="btn btn-outline-light">Sales</Link>
+        <Link to="/page1" className="btn btn-outline-secondary">Customer Success</Link>
+        <Link to="/page2" className="btn btn-outline-secondary">Distribution</Link>
+        <Link to="/page3" className="btn btn-outline-secondary">Operations</Link>
+        <Link to="/page4" className="btn btn-outline-secondary">Reseller</Link>
+        <Link to="/page5" className="btn btn-outline-secondary">Sales</Link>
       </div>
     </div>
   );
@@ -59,7 +59,7 @@ export default function App() {
     <div style={{
       minHeight: '100vh',
       minWidth: '100vw',
-      background: 'linear-gradient(to bottom,rgb(252, 231, 231),rgb(72, 3, 3))',
+      background: 'linear-gradient(to bottom,rgb(252, 231, 231),rgb(107, 1, 1))',
     }}>
     <Router>
       <Routes>
