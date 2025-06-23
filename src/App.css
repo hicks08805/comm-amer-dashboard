@@ -39,7 +39,6 @@
 
 body, html {
   background-color: linear-gradient(to bottom, #808080, #000000) !important; /* Medium gray to black */
-  color: white;
   margin: 0;
   padding: 0;
   height: 100%;
