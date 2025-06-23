@@ -56,30 +56,6 @@ function SheetPreview({ title, url }) {
   );
 }
 
-function OperationsLayout() {
-  return (
-    <div className="container-fluid">
-      <div className="row vh-100">
-        {/* Sidebar */}
-        <div className="col-3 bg-light p-4 border-end">
-          <h4>Operations</h4>
-          <div className="d-grid gap-2 mt-3">
-            <Link to="/page3/form" className="btn btn-primary">Submit a Request</Link>
-            <Link to="/page3/sheet" className="btn btn-success">View Requests</Link>
-          </div>
-          <Link to="/" className="btn btn-link mt-5">← Back to Home</Link>
-        </div>
-
-        {/* Content Area */}
-        <div className="col-9 p-4">
-          <Outlet />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-
 export default function App() {
   return (
     <Router>
