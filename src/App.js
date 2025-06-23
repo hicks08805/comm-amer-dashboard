@@ -56,9 +56,9 @@ function OperationsLayout() {
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Comm Amer Dashboard</Link>
+        <Link className="navbar-brand fw-bold text-white" to="/">Comm Amer Dashboard</Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -73,19 +73,19 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/page1">Customer Success</Link>
+              <Link className="nav-lin fw-bold text-white" to="/page1">Customer Success</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/page2">Distribution</Link>
+              <Link className="nav-link fw-bold text-white" to="/page2">Distribution</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/page3">Operations</Link>
+              <Link className="nav-link fw-bold text-white" to="/page3">Operations</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/page4">Reseller</Link>
+              <Link className="nav-link fw-bold text-white" to="/page4">Reseller</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/page5">Sales</Link>
+              <Link className="nav-link fw-bold text-white" to="/page5">Sales</Link>
             </li>
           </ul>
         </div>
