@@ -16,15 +16,6 @@ function Home() {
   );
 }
 
-function Page({ number }) {
-  return (
-    <div className="container text-center mt-5">
-      <h2 className="mb-3">This is Page {number}</h2>
-      <Link to="/" className="btn btn-outline-secondary">← Back to Home</Link>
-    </div>
-  );
-}
-
 function SheetPreview({ title, url }) {
   return (
     <div className="container text-center mt-4">
@@ -89,8 +80,7 @@ export default function App() {
           }
         />
 
-        {/* 🔧 FIX: Nest these under /page3 */}
-        <Route path="/page3" element={<OperationsLayout />}>
+        <Route path="/page3">
           <Route
             index
             element={
