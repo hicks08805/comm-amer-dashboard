@@ -15,7 +15,7 @@ code {
 body, html, #root {
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(to bottom, rgb(173, 172, 172),rgb(107, 1, 1)); /* Dark gray to black */
+  background: linear-gradient(to bottom, rgb(173, 172, 172),rgb(107, 1, 1)) !important; /* Dark gray to black */
   color: white;
 }
 
