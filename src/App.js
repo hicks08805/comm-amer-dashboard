@@ -56,89 +56,113 @@ function SheetPreview({ title, url }) {
   );
 }
 
+function OperationsLayout() {
+  return (
+    <div className="container-fluid">
+      <div className="row vh-100">
+        <div className="col-3 bg-light p-4 border-end">
+          <h4>Operations</h4>
+          <div className="d-grid gap-2 mt-3">
+            <Link to="/page3/form" className="btn btn-primary">Submit a Request</Link>
+            <Link to="/page3/sheet" className="btn btn-success">View Requests</Link>
+          </div>
+          <Link to="/" className="btn btn-link mt-5">← Back to Home</Link>
+        </div>
+        <div className="col-9 p-4">
+          <Outlet />
+        </div>
+      </div>
+    </div>
+  );
+
+
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        
         <Route
           path="/page1"
           element={
             <SheetPreview
-            title="Customer Success Sheet"
-            url="https://docs.google.com/spreadsheets/d/1Zu8rubQkE_gFAgOXdsdL4CYqpLvt33bIbNa9U7pDZdo/preview"
-          />
+              title="Customer Success Sheet"
+              url="https://docs.google.com/spreadsheets/d/1Zu8rubQkE_gFAgOXdsdL4CYqpLvt33bIbNa9U7pDZdo/preview"
+            />
           }
         />
+        
         <Route
           path="/page2"
           element={
             <SheetPreview
-            title="Disti Forecast Dashboard"
-            url="https://docs.google.com/spreadsheets/d/1Ubg6nsP8CndyklOn0g5O7fxzqLO9bZOG0koP4k2K0bA/preview"
-          />
+              title="Disti Forecast Dashboard"
+              url="https://docs.google.com/spreadsheets/d/1Ubg6nsP8CndyklOn0g5O7fxzqLO9bZOG0koP4k2K0bA/preview"
+            />
           }
         />
 
-  <Route
-  index
-  element={
-    <div className="container text-center mt-3">
-      <h2 className="mb-4">Operations Request Tracker</h2>
-      <div className="ratio ratio-16x9">
-        <iframe
-          src="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
-          width="100%"
-          height="600"
-          frameBorder="0"
-          title="Operations Requests Sheet"
-        />
-      </div>
-    </div>
-  }
-/>
-  <Route
-    path="form"
-    element={
-      <div className="container text-center mt-3">
-        <h2 className="mb-4">Submit an Operations Request</h2>
-        <div className="ratio ratio-4x3">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true"
-            width="100%"
-            height="800"
-            frameBorder="0"
-            title="Operations Form"
+        {/* 🔧 FIX: Nest these under /page3 */}
+        <Route path="/page3" element={<OperationsLayout />}>
+          <Route
+            index
+            element={
+              <div className="container text-center mt-3">
+                <h2 className="mb-4">Operations Request Tracker</h2>
+                <div className="ratio ratio-16x9">
+                  <iframe
+                    src="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
+                    width="100%"
+                    height="600"
+                    frameBorder="0"
+                    title="Operations Requests Sheet"
+                  />
+                </div>
+              </div>
+            }
           />
-        </div>
-      </div>
-    }
-  />
-  <Route
-    path="sheet"
-    element={
-      <div className="container text-center mt-3">
-        <h2 className="mb-4">Operations Request Tracker</h2>
-        <div className="ratio ratio-16x9">
-          <iframe
-            src="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
-            width="100%"
-            height="600"
-            frameBorder="0"
-            title="Operations Requests Sheet"
+          <Route
+            path="form"
+            element={
+              <div className="container text-center mt-3">
+                <h2 className="mb-4">Submit an Operations Request</h2>
+                <div className="ratio ratio-4x3">
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true"
+                    width="100%"
+                    height="800"
+                    frameBorder="0"
+                    title="Operations Form"
+                  />
+                </div>
+              </div>
+            }
           />
-        </div>
-      </div>
-    }
-  />
-</Route>
+          <Route
+            path="sheet"
+            element={
+              <div className="container text-center mt-3">
+                <h2 className="mb-4">Operations Request Tracker</h2>
+                <div className="ratio ratio-16x9">
+                  <iframe
+                    src="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
+                    width="100%"
+                    height="600"
+                    frameBorder="0"
+                    title="Operations Requests Sheet"
+                  />
+                </div>
+              </div>
+            }
+          />
+        </Route>
 
         <Route
           path="/page4"
           element={
             <SheetPreview
-            title="Reseller List"
-            url="https://docs.google.com/spreadsheets/d/1QOkaMRBVgoUPZEuOwpTQbChwTSIwhqnfzDZIpzV1Dco/preview"
+              title="Reseller List"
+              url="https://docs.google.com/spreadsheets/d/1QOkaMRBVgoUPZEuOwpTQbChwTSIwhqnfzDZIpzV1Dco/preview"
             />
           }
         />
@@ -154,5 +178,4 @@ export default function App() {
       </Routes>
     </Router>
   );
-  
 }
