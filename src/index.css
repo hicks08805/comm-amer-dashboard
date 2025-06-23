@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #b50202 !important;
 }
 
 code {
@@ -17,7 +16,7 @@ html, body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: linear-gradient(to bottom, #808080, #000000) !important; /* medium gray to black */
+  background: linear-gradient(to bottom, rgb(198, 195, 195), #000000) !important; /* medium gray to black */
   color: white;
   font-family: sans-serif;
 }
@@ -26,3 +25,6 @@ html, body {
   min-height: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: white !important;
+}
