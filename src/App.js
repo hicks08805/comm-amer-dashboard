@@ -56,7 +56,7 @@ function OperationsLayout() {
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">Comm Amer Dashboard</Link>
         <button
