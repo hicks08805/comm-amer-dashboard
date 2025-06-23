@@ -16,19 +16,6 @@ function Home() {
   );
 }
 
-function OperationsOptions() {
-  return (
-    <div className="container text-center mt-5">
-      <h2 className="mb-4">Operations Tools</h2>
-      <div className="d-grid gap-3 col-6 mx-auto">
-        <Link to="/page3/form" className="btn btn-primary">Submit a Request</Link>
-        <Link to="/page3/sheet" className="btn btn-success">View Requests</Link>
-      </div>
-      <Link to="/" className="btn btn-link mt-4">← Back to Home</Link>
-    </div>
-  );
-}
-
 function Page({ number }) {
   return (
     <div className="container text-center mt-5">
