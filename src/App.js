@@ -43,25 +43,6 @@ function SheetPreview({ title, url }) {
   );
 }
 
-function GoogleFormPreview() {
-  return (
-    <div className="container text-center mt-5">
-      <h2>Submit Feedback</h2>
-      <div className="ratio ratio-4x3">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true"
-          width="100%"
-          height="800"
-          frameBorder="0"
-          title="Google Form"
-          allowFullScreen
-        ></iframe>
-      </div>
-      <Link to="/" className="btn btn-outline-secondary mt-3">← Back</Link>
-    </div>
-  );
-}
-
 export default function App() {
   return (
     <Router>
@@ -88,10 +69,20 @@ export default function App() {
         <Route
           path="/page3"
           element={
-            <SheetPreview
-            title="Opearations Request Form"
-            url="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true"
-            />
+            <div className="container text-center mt-5">
+              <h2 className="mb-4">Operations Form</h2>
+            <div className="ratio ratio-4x3">
+              <iframe
+                src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+                width="100%"
+                height="800"
+                frameBorder="0"
+                title="Comm Amer Request Form"
+                allowFullScreen
+              ></iframe>
+            </div>
+              <Link to="/" className="btn btn-outline-secondary mt-4">← Back</Link>
+            </div>
           }
         />
         <Route
