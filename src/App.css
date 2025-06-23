@@ -14,8 +14,8 @@
 }
 
 .App-header {
-  background-color: linear-gradient(to bottom, #333333, #000000); /* Medium gray to black */
-    min-height: 100vh;
+  background-color: #808080;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +38,7 @@
 }
 
 body, html {
-  background-color: linear-gradient(to bottom, #333333, #000000) !important; /* Medium gray to black */
+  background-color: linear-gradient(to bottom, #808080, #000000) !important; /* Medium gray to black */
   color: white;
   margin: 0;
   padding: 0;
