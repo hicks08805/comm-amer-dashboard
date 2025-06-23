@@ -6,11 +6,11 @@ function Home() {
     <div className="container text-center mt-5">
       <h1 className="mb-4">Commercial Americas Dashboard</h1>
       <div className="d-grid gap-3 col-6 mx-auto">
-        <Link to="/page1" className="btn btn-primary">Customer Success</Link>
-        <Link to="/page2" className="btn btn-success">Distribution</Link>
-        <Link to="/page3" className="btn btn-warning">Operations</Link>
-        <Link to="/page4" className="btn btn-danger">Reseller</Link>
-        <Link to="/page5" className="btn btn-info">Sales</Link>
+        <Link to="/page1" className="btn btn-outline-light">Customer Success</Link>
+        <Link to="/page2" className="btn btn-outline-light">Distribution</Link>
+        <Link to="/page3" className="btn btn-outline-light">Operations</Link>
+        <Link to="/page4" className="btn btn-outline-light">Reseller</Link>
+        <Link to="/page5" className="btn btn-outline-light">Sales</Link>
       </div>
     </div>
   );
@@ -29,7 +29,7 @@ function SheetPreview({ title, url }) {
           title={title}
         ></iframe>
       </div>
-      <Link to="/" className="btn btn-outline-secondary mt-3">← Back</Link>
+      <Link to="/" className="btn btn-outline-outline-light mt-3">← Back</Link>
     </div>
   );
 }
@@ -41,8 +41,8 @@ function OperationsLayout() {
         <div className="col-3 bg-light p-4 border-end">
           <h4>Comm Amer Requests</h4>
           <div className="d-grid gap-2 mt-3">
-            <Link to="/page3/form" className="btn btn-primary">Submit a Request</Link>
-            <Link to="/page3/sheet" className="btn btn-success">View Requests</Link>
+            <Link to="/page3/form" className="btn btn-outline-light">Submit a Request</Link>
+            <Link to="/page3/sheet" className="btn btn-outline-light">View Requests</Link>
           </div>
           <Link to="/" className="btn btn-link mt-5">← Back to Home</Link>
         </div>
