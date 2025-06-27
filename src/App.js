@@ -17,7 +17,7 @@ export default function App() {
           display: 'flex',
           minHeight: '100vh',
           minWidth: '100vw',
-          background: 'linear-gradient(to bottom, rgb(173,172,172), rgb(107,1,1))',
+          background: 'linear-gradient(to bottom, rgb(255, 255, 255), rgb(208, 207, 207))',
         }}
       >
         <Sidebar />
