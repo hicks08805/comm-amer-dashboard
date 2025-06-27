@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from 'react-router-dom';
-import Sidebar from './sidebar';  // Assuming Sidebar.js is in the same folder
+import Sidebar from './Sidebar';  // Assuming Sidebar.js is in the same folder
 import {
   Box,
   Button,
