@@ -56,14 +56,6 @@ function SheetPreview({ title, url }) {
   );
 }
 
-export default function OperationsLayout() {
-  return (
-    <Box sx={{ p: 3 }}>
-      <Outlet />
-    </Box>
-  );
-}
-
 export default function App() {
   return (
     <Router>
@@ -107,7 +99,7 @@ export default function App() {
                 />
               }
             />
-            <Route path="/page3" element={<OperationsLayout />}>
+            <Route path="/page3">
               <Route
                 index
                 element={
