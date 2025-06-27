@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from 'react-router-dom';
-import Sidebar from './sidebar';
-import { Outlet } from 'react-router-dom';
+import Sidebar from './Sidebar';  // Assuming Sidebar.js is in the same folder
 import {
   Box,
   Button,
   CssBaseline,
+  Container,
   Typography,
   Grid,
 } from '@mui/material';
@@ -14,7 +14,7 @@ const drawerWidth = 240;
 
 function Home() {
   return (
-    <Box sx={{ textAlign: 'center', mt: 5 }}>
+    <Container sx={{ textAlign: 'center', mt: 5 }}>
       <Typography variant="h4" gutterBottom>
         Commercial Americas Dashboard
       </Typography>
@@ -33,13 +33,13 @@ function Home() {
           </Grid>
         ))}
       </Grid>
-    </Box>
+    </Container>
   );
 }
 
 function SheetPreview({ title, url }) {
   return (
-    <Box sx={{ textAlign: 'center', mt: 4 }}>
+    <Container sx={{ textAlign: 'center', mt: 4 }}>
       <Typography variant="h5" gutterBottom>{title}</Typography>
       <Box sx={{ aspectRatio: '16/9', mb: 2 }}>
         <iframe
@@ -53,10 +53,11 @@ function SheetPreview({ title, url }) {
       <Button component={Link} to="/" variant="outlined" color="primary" sx={{ fontWeight: 'bold' }}>
         ← Back
       </Button>
-    </Box>
+    </Container>
   );
 }
 
+// This just renders nested /page3 routes inside
 function OperationsLayout() {
   return <Outlet />;
 }
@@ -70,12 +71,11 @@ export default function App() {
           display: 'flex',
           minHeight: '100vh',
           minWidth: '100vw',
-          background: 'linear-gradient(to bottom, rgb(255, 255, 255),rgb(182, 181, 181))',
+          background: 'linear-gradient(to bottom, rgb(255, 255, 255), rgb(182, 181, 181))',
         }}
       >
         <Sidebar />
 
-        {/* Main content area */}
         <Box
           component="main"
           sx={{
@@ -105,34 +105,24 @@ export default function App() {
               }
             />
             <Route path="/page3" element={<OperationsLayout />}>
-                <Route
-                  index
-                  element={
-                    <SheetPreview
-                      title="Comm Amer Requests Tracker"
-                      url="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
-                    />
-                  }
-                />
-                <Route
-                  path="form"
-                  element={
-                    <SheetPreview
-                      title="Submit a Comm Amer Request"
-                      url="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true"
-                    />
-                  }
-                />
-                <Route
-                  path="sheet"
-                  element={
-                    <SheetPreview
-                      title="Comm Amer Requests Tracker"
-                      url="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
-                    />
-                  }
-                />
-              </Route>
+              <Route
+                index
+                element={
+                  <SheetPreview
+                    title="Comm Amer Requests Tracker"
+                    url="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
+                  />
+                }
+              />
+              <Route
+                path="form"
+                element={
+                  <SheetPreview
+                    title="Submit a Comm Amer Request"
+                    url="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true"
+                  />
+                }
+              />
               <Route
                 path="sheet"
                 element={
