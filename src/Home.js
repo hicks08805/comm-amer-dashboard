@@ -19,23 +19,6 @@ export default function Home() {
         Commercial Americas Dashboard
       </Typography>
 
-      {/* Buttons */}
-      <Grid container spacing={2} justifyContent="center" sx={{ mb: 5 }}>
-        {['page1', 'page2', 'page3', 'page4', 'page5'].map((page, index) => (
-          <Grid item key={page}>
-            <Button
-              component={Link}
-              to={`/${page}`}
-              variant="outlined"
-              color="primary"
-              sx={{ fontWeight: 'bold' }}
-            >
-              {['Customer Success', 'Distribution', 'Operations', 'Reseller', 'Sales'][index]}
-            </Button>
-          </Grid>
-        ))}
-      </Grid>
-
       {/* Metrics Graph */}
       <Typography variant="h5" gutterBottom>
         Team Metrics Overview
