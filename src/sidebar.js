@@ -1,25 +1,32 @@
 // Sidebar.js
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import {
   Drawer,
   List,
   ListItemButton,
   ListItemText,
   Collapse,
-  Toolbar,
+  ListItemIcon,
 } from '@mui/material';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
+import {
+  ExpandLess,
+  ExpandMore,
+  Dashboard as DashboardIcon,
+  Assignment as AssignmentIcon,
+  Assessment as AssessmentIcon,
+  Group as GroupIcon,
+  Business as BusinessIcon,
+  InsertChart as ChartIcon,
+} from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
 export default function Sidebar() {
-  const location = useLocation();
-  const [openOperations, setOpenOperations] = useState(false);
+  const [openOps, setOpenOps] = useState(false);
 
-  const handleOperationsClick = () => {
-    setOpenOperations((prev) => !prev);
+  const handleOpsClick = () => {
+    setOpenOps(!openOps);
   };
 
   return (
@@ -28,78 +35,54 @@ export default function Sidebar() {
       sx={{
         width: drawerWidth,
         flexShrink: 0,
-        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+        [`& .MuiDrawer-paper`]: {
+          width: drawerWidth,
+          boxSizing: 'border-box',
+          backgroundColor: '#f5f5f5',
+        },
       }}
     >
-      <Toolbar />
       <List>
-        <ListItemButton
-          component={Link}
-          to="/page1"
-          selected={location.pathname === '/page1'}
-        >
+        <ListItemButton component={Link} to="/">
+          <ListItemIcon><DashboardIcon /></ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItemButton>
+
+        <ListItemButton component={Link} to="/page1">
+          <ListItemIcon><AssignmentIcon /></ListItemIcon>
           <ListItemText primary="Customer Success" />
         </ListItemButton>
 
-        <ListItemButton
-          component={Link}
-          to="/page2"
-          selected={location.pathname === '/page2'}
-        >
+        <ListItemButton component={Link} to="/page2">
+          <ListItemIcon><ChartIcon /></ListItemIcon>
           <ListItemText primary="Distribution" />
         </ListItemButton>
 
-        {/* Operations dropdown */}
-        <ListItemButton onClick={handleOperationsClick}>
+        {/* Operations with nested links */}
+        <ListItemButton onClick={handleOpsClick}>
+          <ListItemIcon><GroupIcon /></ListItemIcon>
           <ListItemText primary="Operations" />
-          {openOperations ? <ExpandLess /> : <ExpandMore />}
+          {openOps ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
-
-        <Collapse in={openOperations} timeout="auto" unmountOnExit>
+        <Collapse in={openOps} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton
-              component={Link}
-              to="/page3/form"
-              selected={location.pathname === '/page3/form'}
-              sx={{ pl: 4 }}
-            >
+            <ListItemButton component={Link} to="/page3/form" sx={{ pl: 4 }}>
               <ListItemText primary="Submit a Request" />
             </ListItemButton>
-
-            <ListItemButton
-              component={Link}
-              to="/page3/sheet"
-              selected={location.pathname === '/page3/sheet'}
-              sx={{ pl: 4 }}
-            >
+            <ListItemButton component={Link} to="/page3/sheet" sx={{ pl: 4 }}>
               <ListItemText primary="View Requests" />
-            </ListItemButton>
-
-            <ListItemButton
-              component={Link}
-              to="/page3"
-              selected={location.pathname === '/page3'}
-              sx={{ pl: 4 }}
-            >
-              <ListItemText primary="Requests Tracker" />
             </ListItemButton>
           </List>
         </Collapse>
 
-        <ListItemButton
-          component={Link}
-          to="/page4"
-          selected={location.pathname === '/page4'}
-        >
+        <ListItemButton component={Link} to="/page4">
+          <ListItemIcon><BusinessIcon /></ListItemIcon>
           <ListItemText primary="Reseller" />
         </ListItemButton>
 
-        <ListItemButton
-          component={Link}
-          to="/page5"
-          selected={location.pathname === '/page5'}
-        >
-          <ListItemText primary="Sales" />
+        <ListItemButton component={Link} to="/page5">
+          <ListItemIcon><AssessmentIcon /></ListItemIcon>
+          <ListItemText primary="Sales Forecast" />
         </ListItemButton>
       </List>
     </Drawer>
