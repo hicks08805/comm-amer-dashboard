@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box, CssBaseline } from '@mui/material';
-import Sidebar from './Sidebar';      // your Sidebar component
-import Home from './Home';            // your Home component
+import Sidebar from './Sidebar.js';      // your Sidebar component
+import Home from './Home.js';            // your Home component
 import SheetPreview from './SheetPreview';
 import OperationsLayout from './OperationsLayout';
 
