@@ -65,16 +65,11 @@ export default function App() {
   return (
     <Router>
       <CssBaseline />
-      <Box
-        sx={{
-          display: 'flex',
-          minHeight: '100vh',
-          minWidth: '100vw',
-          background: 'linear-gradient(to bottom, rgb(255, 255, 255), rgb(182, 181, 181))',
-        }}
-      >
+       <Box sx={{ display: 'flex', minHeight: '100vh', background: 'linear-gradient(to bottom, #ffffff, #b6b5b5)' }}>
         <Sidebar />
-
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+         <Routes>
+            <Route path="/" element={<Home />} />
         <Box
           component="main"
           sx={{
@@ -150,6 +145,8 @@ export default function App() {
                 />
               }
             />
+          </Routes>
+          </Box>
           </Routes>
         </Box>
       </Box>
