@@ -1,25 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from '.src/Sidebar';
-import Home from './Home';         // Your existing Home component
-import SheetPreview from './SheetPreview'; // Your SheetPreview component
-import OperationsLayout from './OperationsLayout'; // Your OperationsLayout component
+import { BrowserRouter as Router, Routes, Route, Link, Outlet } from 'react-router-dom';
+import Sidebar from './Sidebar';
 import {
   Box,
   Button,
-  AppBar,
-  Toolbar,
+  CssBaseline,
   Typography,
   Grid,
-  Container,
-  CssBaseline,
 } from '@mui/material';
 
 const drawerWidth = 240;
 
 function Home() {
   return (
-    <Container sx={{ textAlign: 'center', mt: 5 }}>
+    <Box sx={{ textAlign: 'center', mt: 5 }}>
       <Typography variant="h4" gutterBottom>
         Commercial Americas Dashboard
       </Typography>
@@ -38,13 +32,13 @@ function Home() {
           </Grid>
         ))}
       </Grid>
-    </Container>
+    </Box>
   );
 }
 
 function SheetPreview({ title, url }) {
   return (
-    <Container sx={{ textAlign: 'center', mt: 4 }}>
+    <Box sx={{ textAlign: 'center', mt: 4 }}>
       <Typography variant="h5" gutterBottom>{title}</Typography>
       <Box sx={{ aspectRatio: '16/9', mb: 2 }}>
         <iframe
@@ -53,19 +47,19 @@ function SheetPreview({ title, url }) {
           height="600"
           style={{ border: 0 }}
           title={title}
-        ></iframe>
+        />
       </Box>
       <Button component={Link} to="/" variant="outlined" color="primary" sx={{ fontWeight: 'bold' }}>
         ← Back
       </Button>
-    </Container>
+    </Box>
   );
 }
 
 function OperationsLayout() {
   return (
     <Box sx={{ display: 'flex', height: '100vh' }}>
-      <Box sx={{ width: '250px', bgcolor: 'grey.200', p: 3 }}>
+      <Box sx={{ width: drawerWidth, bgcolor: 'grey.200', p: 3 }}>
         <Typography variant="h6" gutterBottom>Comm Amer Requests</Typography>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           <Button component={Link} to="/page3/form" variant="outlined" color="primary" sx={{ fontWeight: 'bold' }}>
@@ -83,29 +77,6 @@ function OperationsLayout() {
         <Outlet />
       </Box>
     </Box>
-  );
-}
-
-function Navbar() {
-  return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
-          Comm Amer Dashboard
-        </Typography>
-        {[['/page1', 'Customer Success'], ['/page2', 'Distribution'], ['/page3', 'Operations'], ['/page4', 'Reseller'], ['/page5', 'Sales']].map(([path, label]) => (
-          <Button
-            key={path}
-            component={Link}
-            to={path}
-            color="inherit"
-            sx={{ fontWeight: 'bold', ml: 1 }}
-          >
-            {label}
-          </Button>
-        ))}
-      </Toolbar>
-    </AppBar>
   );
 }
 
