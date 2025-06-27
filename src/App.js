@@ -9,6 +9,7 @@ import {
   Button,
   Grid,
 } from '@mui/material';
+import Home from './Home'
 
 const drawerWidth = 240;
 
