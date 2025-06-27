@@ -56,26 +56,10 @@ function SheetPreview({ title, url }) {
   );
 }
 
-function OperationsLayout() {
+export default function OperationsLayout() {
   return (
-    <Box sx={{ display: 'flex', height: '100vh' }}>
-      <Box sx={{ width: drawerWidth, bgcolor: 'grey.200', p: 3 }}>
-        <Typography variant="h6" gutterBottom>Comm Amer Requests</Typography>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <Button component={Link} to="/page3/form" variant="outlined" color="primary" sx={{ fontWeight: 'bold' }}>
-            Submit a Request
-          </Button>
-          <Button component={Link} to="/page3/sheet" variant="outlined" color="primary" sx={{ fontWeight: 'bold' }}>
-            View Requests
-          </Button>
-        </Box>
-        <Button component={Link} to="/" sx={{ mt: 5, fontWeight: 'bold' }}>
-          ← Back to Home
-        </Button>
-      </Box>
-      <Box sx={{ flexGrow: 1, p: 4 }}>
-        <Outlet />
-      </Box>
+    <Box sx={{ p: 3 }}>
+      <Outlet />
     </Box>
   );
 }
@@ -89,7 +73,7 @@ export default function App() {
           display: 'flex',
           minHeight: '100vh',
           minWidth: '100vw',
-          background: 'linear-gradient(to bottom, rgb(173,172,172), rgb(107,1,1))',
+          background: 'linear-gradient(to bottom, rgb(255, 255, 255),rgb(182, 181, 181))',
         }}
       >
         <Sidebar />
