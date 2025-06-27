@@ -1,19 +1,8 @@
 // src/index.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
-import { ThemeProvider, CssBaseline } from '@mui/material';
-import theme from './theme';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline /> {/* Optional: resets default styles */}
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import './index.css'; // Optional, if you have global styles
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,5 +10,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-
