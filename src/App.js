@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from 'react-router-dom';
-import Sidebar from './Sidebar';
+import Sidebar from './sidebar';
 import {
   Box,
   Button,
