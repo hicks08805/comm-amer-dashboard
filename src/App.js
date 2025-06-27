@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, Outlet } from 'react-router-dom';
-import Sidebar from './Sidebar';  // Assuming Sidebar.js is in the same folder
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import Sidebar from './Sidebar'; // make sure the path is correct
 import {
   Box,
-  Button,
   CssBaseline,
   Container,
   Typography,
+  Button,
   Grid,
 } from '@mui/material';
 
@@ -22,8 +22,7 @@ function Home() {
         {['page1', 'page2', 'page3', 'page4', 'page5'].map((page, index) => (
           <Grid item key={page}>
             <Button
-              component={Link}
-              to={`/${page}`}
+              href={`/${page}`}
               variant="outlined"
               color="primary"
               sx={{ fontWeight: 'bold' }}
@@ -50,14 +49,13 @@ function SheetPreview({ title, url }) {
           title={title}
         />
       </Box>
-      <Button component={Link} to="/" variant="outlined" color="primary" sx={{ fontWeight: 'bold' }}>
+      <Button href="/" variant="outlined" color="primary" sx={{ fontWeight: 'bold' }}>
         ← Back
       </Button>
     </Container>
   );
 }
 
-// This just renders nested /page3 routes inside
 function OperationsLayout() {
   return <Outlet />;
 }
