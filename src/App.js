@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from 'react-router-dom';
 import Sidebar from './sidebar';
+import { Outlet } from 'react-router-dom';
 import {
   Box,
   Button,
@@ -56,6 +57,10 @@ function SheetPreview({ title, url }) {
   );
 }
 
+function OperationsLayout() {
+  return <Outlet />;
+}
+
 export default function App() {
   return (
     <Router>
@@ -99,25 +104,35 @@ export default function App() {
                 />
               }
             />
-            <Route path="/page3">
-              <Route
-                index
-                element={
-                  <SheetPreview
-                    title="Comm Amer Requests Tracker"
-                    url="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
-                  />
-                }
-              />
-              <Route
-                path="form"
-                element={
-                  <SheetPreview
-                    title="Submit a Comm Amer Request"
-                    url="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true"
-                  />
-                }
-              />
+            <Route path="/page3" element={<OperationsLayout />}>
+                <Route
+                  index
+                  element={
+                    <SheetPreview
+                      title="Comm Amer Requests Tracker"
+                      url="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
+                    />
+                  }
+                />
+                <Route
+                  path="form"
+                  element={
+                    <SheetPreview
+                      title="Submit a Comm Amer Request"
+                      url="https://docs.google.com/forms/d/e/1FAIpQLSc7Cqmik4Jgg9lBgpzpLHWg7jsSWGeEHl9yN6d5tMNTcD8sNg/viewform?embedded=true"
+                    />
+                  }
+                />
+                <Route
+                  path="sheet"
+                  element={
+                    <SheetPreview
+                      title="Comm Amer Requests Tracker"
+                      url="https://docs.google.com/spreadsheets/d/1m4X7XssYTrk3ZPmrThtGkDTeDKIKVENnUCastoVnkbQ/preview"
+                    />
+                  }
+                />
+              </Route>
               <Route
                 path="sheet"
                 element={
