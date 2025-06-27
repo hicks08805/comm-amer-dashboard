@@ -12,7 +12,7 @@ import {
 
 const drawerWidth = 240;
 
-function Home() {
+export default function Home() {
   return (
     <Container sx={{ textAlign: 'center', mt: 5 }}>
       <Typography variant="h4" gutterBottom>
