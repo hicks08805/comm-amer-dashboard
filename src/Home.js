@@ -3,7 +3,7 @@ import { Container, Typography } from '@mui/material';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import Papa from 'papaparse';
 
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/11AI2u8e_q_-99YXX3md2s1qOpClpRJ-959puJFEfw2U/export?format=csv&gid=1070856046';
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/11AI2u8e_q_-99YXX3md2s1qOpClpRJ-959puJFEfw2U/gviz/tq?tqx=out:csv&sheet=Sheet2';
 
 export default function Home() {
   const [data, setData] = useState([]);
