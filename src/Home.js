@@ -43,6 +43,7 @@ export default function Home() {
           height={60} // reserve enough space for labels
         />
         <YAxis
+          dataKey="Sales"
           tickFormatter={(value) =>
             `$${value.toLocaleString(undefined, {
               minimumFractionDigits: 2,
@@ -58,8 +59,7 @@ export default function Home() {
             })}`
           }
         />
-        <Legend />
-        <Bar dataKey="Sales" fill="#1976d2" label={{ position: 'top', dy: -10 }} />
+        <Bar dataKey="Sales" fill="#1976d2"/>
       </BarChart>
     </Container>
   );
