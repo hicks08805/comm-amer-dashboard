@@ -1,40 +1,46 @@
-// Home.js
-import React from 'react';
-import { Container, Typography, Grid, Button, Box } from '@mui/material';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Container, Typography } from '@mui/material';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import Papa from 'papaparse';
 
-const data = [
-  { name: 'Customer Success', value: 400 },
-  { name: 'Distribution', value: 300 },
-  { name: 'Operations', value: 200 },
-  { name: 'Reseller', value: 278 },
-  { name: 'Sales', value: 189 },
-];
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/11AI2u8e_q_-99YXX3md2s1qOpClpRJ-959puJFEfw2U/export?format=csv&gid=1070856046';
 
 export default function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(SHEET_URL)
+      .then(res => res.text())
+      .then(csv => {
+        Papa.parse(csv, {
+          header: true,
+          dynamicTyping: true,
+          complete: (results) => {
+            setData(results.data);
+          },
+        });
+      });
+  }, []);
+
   return (
     <Container sx={{ mt: 5 }}>
-      <Typography variant="h4" align="center" gutterBottom>
+      <Typography variant="h4" gutterBottom>
         Commercial Americas Dashboard
       </Typography>
 
-      {/* Metrics Graph */}
-      <Typography variant="h5" gutterBottom>
-        Team Metrics Overview
-      </Typography>
-      <Box sx={{ height: 400 }}>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="value" fill="#1976d2" />
-          </BarChart>
-        </ResponsiveContainer>
-      </Box>
+      <BarChart
+        width={600}
+        height={300}
+        data={data}
+        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="Name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="Sales" fill="#1976d2" />
+      </BarChart>
     </Container>
   );
 }
