@@ -31,15 +31,37 @@ export default function Home() {
         width={600}
         height={300}
         data={staticData}
-        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+        margin={{ top: 20, right: 30, left: 20, bottom: 70 }} // increased bottom margin
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="Name" angle={-45} textAnchor="end" interval={0} dy={10}/>
-        <YAxis />
-        <Tooltip />
+        <XAxis
+          dataKey="Name"
+          angle={-45}
+          textAnchor="end"
+          interval={0}
+          dy={20} // move labels down a bit more
+          height={60} // reserve enough space for labels
+        />
+        <YAxis
+          tickFormatter={(value) =>
+            `$${value.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}`
+          }
+        />
+        <Tooltip
+          formatter={(value) =>
+            `$${value.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}`
+          }
+        />
         <Legend />
-        <Bar dataKey="Sales" fill="#1976d2" />
+        <Bar dataKey="Sales" fill="#1976d2" label={{ position: 'top', dy: -10 }} />
       </BarChart>
     </Container>
   );
 }
+
