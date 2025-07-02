@@ -7,18 +7,34 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
 } from 'recharts';
 
 const staticData = [
-  { Name: 'Enterprise East', Sales: 9500000 },
-  { Name: 'Enterprise West', Sales: 9070000 },
-  { Name: 'HCGE East', Sales: 11290000 },
-  { Name: 'HCGE West', Sales: 7040000 },
-  { Name: 'Mid-Market East', Sales: 11380000 },
-  { Name: 'Mid-Market West', Sales: 12900000 },
-  { Name: 'LATAM', Sales: 6420000 },
+  { Name: 'Enterprise East', Sales: 9500000, Leader: 'David Cagle' },
+  { Name: 'Enterprise West', Sales: 9070000, Leader: 'David Sciano' },
+  { Name: 'HCGE East', Sales: 11290000, Leader: 'Jennifer Dominguez' },
+  { Name: 'HCGE West', Sales: 7040000, Leader: 'Michael Thompson'},
+  { Name: 'Mid-Market East', Sales: 11380000, Leader: 'Mike Brown' },
+  { Name: 'Mid-Market West', Sales: 12900000, Leader: 'Abby Gill' },
+  { Name: 'LATAM', Sales: 6420000, Leader: 'Cecilia Moreno' },
 ];
+
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div style={{
+        backgroundColor: 'white',
+        border: '1px solid #ccc',
+        padding: '10px',
+      }}>
+        <p><strong>Custom Label:</strong> {Leader}</p>  {/* change label here */}
+        <p>{payload[0].name}: ${payload[0].value.toLocaleString()}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
 
 export default function Home() {
   return (
@@ -51,14 +67,7 @@ export default function Home() {
             })}`
           }
         />
-        <Tooltip
-          formatter={(value) =>
-            `$${value.toLocaleString(undefined, {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}`
-          }
-        />
+        <Tooltip content={<CustomTooltip />} />
         <Bar dataKey="Sales" fill="#1976d2"/>
       </BarChart>
     </Container>
