@@ -27,7 +27,7 @@ const CustomTooltip = ({ active, payload, label }) => {
         border: '1px solid #ccc',
         padding: '10px',
       }}>
-        <p><strong>Custom Label:</strong> {Leader}</p>  {/* change label here */}
+        <p><strong>Custom Label:</strong> {data.leader}</p>  {Leader}
         <p>{payload[0].name}: ${payload[0].value.toLocaleString()}</p>
       </div>
     );
