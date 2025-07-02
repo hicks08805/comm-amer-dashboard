@@ -34,7 +34,7 @@ export default function Home() {
         margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="Name" />
+        <XAxis dataKey="Name" angle={-45} textAnchor="end" interval={0} dy={10}/>
         <YAxis />
         <Tooltip />
         <Legend />
